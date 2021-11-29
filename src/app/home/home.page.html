@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Geolocalização com capacitor</ion-title>
     </ion-toolbar>
   </ion-header>
+<ion-content>
+    <ion-button siz="small" (click)="requestPermission()">
+      Permissão para Geolocalização
+    </ion-button>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-card>
+      <ion-card-header>
+        <ion-button size="small" (click)="getCurrentCoordinate()">
+          Localização atual
+        </ion-button>
+      </ion-card-header>
+      
+      <ion-car-content>
+        Latitude: {{ coordinate?.Latitude }}
+        Longitude: {{ coordinate?.longitude }}
+      </ion-car-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-button>
+          Watch Position
+        </ion-button>
+      </ion-card-header>
+      <ion-car-content>
+        Latitude: {{ coordinate?.Latitude }}
+        Longitude: {{ coordinate?.longitude }}
+      </ion-car-content>
+    </ion-card>
+
+    <ion-button size="small" (click)="clearWatch()"> Limpar</ion-button>
 </ion-content>
